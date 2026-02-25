@@ -12,7 +12,7 @@ function Home() {
           )
         }
       >
-        Se você for minha mãe, clique aqui!
+        Se você for meu pai, clique aqui!
       </button>
     </>
   );
