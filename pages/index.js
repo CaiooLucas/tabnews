@@ -9,11 +9,11 @@ function Home() {
       <button
         onClick={() =>
           alert(
-            "A mensagem do site verdadeira pra você é: Você é muito especial para mim!",
+            "Se você abriu isso, lamento informar mas além de curioso você é corno.",
           )
         }
       >
-        Se você for meu pai, clique aqui!
+        NÃO CLIQUE NESSE BOTÃO
       </button>
     </>
   );
