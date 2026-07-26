@@ -19,7 +19,7 @@ const ptBR = {
       titleLead: "O sistema operacional do",
       titleHighlight: "transporte escolar",
       description:
-        "Estudante de Ciencia da Computação na Universidade de Brasília, sempre em busca de aprender cada vez mais sobre tudo que envolve desenvolver um software. Atualmente sou desenvolver da Vanep, um projeto que surgiu entre amigos que visa melhorar a logisitica de vans escolares.",
+        "Estudante de Ciencia da Computação, sempre em busca de aprender cada vez mais sobre tudo que envolve desenvolver um software.",
       primaryCta: "Entre em contato",
       secondaryCta: "Conheça minha trajetória",
       technologies: [
