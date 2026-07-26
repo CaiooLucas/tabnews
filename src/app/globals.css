@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Vanep brand palette — navy gradient + teal van accent (from the logo) */
+  --background: #0a2949;
+  --background-deep: #071d37;
+  --background-soft: #0f3e6e;
+  --foreground: #eaf4fb;
+
+  --muted: #103355;
+  --muted-foreground: #9bc0dc;
+
+  --border: #1d4a73;
+
+  --brand: #5cbcd6;
+  --brand-strong: #45a9c6;
+  --brand-foreground: #07203a;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  background-color: var(--background-deep);
+  background-image:
+    radial-gradient(
+      1100px 760px at 72% 38%,
+      rgba(92, 188, 214, 0.2),
+      transparent 60%
+    ),
+    radial-gradient(
+      900px 700px at 8% 88%,
+      rgba(69, 169, 198, 0.14),
+      transparent 55%
+    ),
+    linear-gradient(155deg, #071d37 0%, #0a2c50 50%, #103e6e 100%);
+  background-attachment: fixed;
+}
+
+/* Wordmark — the "vanep." logotype */
+.wordmark {
+  font-family: var(--font-display), var(--font-geist-sans), sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.wordmark-dot {
+  color: var(--brand);
+}
+
+/* Pixel-trail accent echoing the logo's motion dots */
+@keyframes pixel-drift {
+  0%,
+  100% {
+    transform: translateX(0);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateX(-4px);
+    opacity: 0.5;
+  }
+}
+
+.animate-pixel {
+  animation: pixel-drift 3s ease-in-out infinite;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-rise {
+  animation: rise 0.7s ease-out both;
+}
