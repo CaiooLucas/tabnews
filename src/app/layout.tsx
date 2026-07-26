@@ -6,6 +6,7 @@ import {
 } from "next/font/google";
 import "@/app/globals.css";
 import { Providers } from "@/components/providers";
+import { InteractiveBackground } from "@/components/interactive-background";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,15 +26,15 @@ const display = Poppins({
 
 export const metadata: Metadata = {
   title: {
-    default: "Vanep — O sistema operacional do transporte escolar",
-    template: "%s | Vanep",
+    default: "Caio Lucas",
+    template: "%s | Caio Lucas",
   },
   description:
-    "Vanep conecta responsáveis a transportadores escolares verificados: contratos digitais, rastreamento em tempo real, notificações a cada etapa e gestão completa para o motorista.",
+    "Caio Lucas — Software Developer",
   openGraph: {
-    title: "Vanep — O sistema operacional do transporte escolar",
+    title: "Caio Lucas",
     description:
-      "Encontre motoristas verificados, acompanhe a van em tempo real e tenha contratos digitais. Tudo em um só lugar.",
+      "Caio Lucas — Software Developer",
     type: "website",
   },
 };
@@ -48,7 +49,8 @@ export default function RootLayout({
       lang="pt-BR"
       className={`${geistSans.variable} ${geistMono.variable} ${display.variable} h-full`}
     >
-      <body className="min-h-full flex flex-col text-foreground antialiased">
+      <body className="relative min-h-full flex flex-col text-foreground antialiased">
+        <InteractiveBackground />
         <Providers>{children}</Providers>
       </body>
     </html>

@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { ScrollToTopLink } from "@/components/scroll-to-top-link";
 import { Wordmark } from "@/components/wordmark";
+import { LiquidGlassButton } from "@/components/liquid-glass-button";
 import { t } from "@/lib/l10n";
 
 const landing = t("landing");
@@ -30,11 +30,8 @@ export default function Home() {
 function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background-deep/70 backdrop-blur-md">
-      <div className="flex h-16 w-full items-center justify-between pl-6 pr-16">
-        <ScrollToTopLink className="select-none" ariaLabel="Voltar ao início">
-          <Wordmark className="text-2xl" withTrail={false} />
-        </ScrollToTopLink>
-        <nav className="hidden items-center gap-8 text-sm text-muted-foreground md:flex">
+      <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-center px-6">
+        <nav className="flex items-center gap-8 text-sm font-medium text-muted-foreground">
           {landing.header.nav.map((item) => (
             <a
               key={item.href}
@@ -45,12 +42,6 @@ function SiteHeader() {
             </a>
           ))}
         </nav>
-        <Link
-          href="/about"
-          className="rounded-full border border-border px-4 py-2 text-sm font-medium text-foreground transition-colors hover:border-brand hover:text-brand"
-        >
-          {landing.header.aboutCta}
-        </Link>
       </div>
     </header>
   );
@@ -64,40 +55,44 @@ function Hero() {
   return (
     <section className="relative overflow-hidden">
       <div className="mx-auto flex w-full max-w-6xl flex-col items-center px-6 pb-24 pt-20 text-center md:pt-28">
-        <span className="animate-rise mb-8 inline-flex items-center gap-2 rounded-full border border-border bg-muted/40 px-4 py-1.5 text-xs font-medium tracking-wide text-brand">
-          <span className="h-1.5 w-1.5 rounded-full bg-brand" />
-          {landing.hero.badge}
-        </span>
-
-        <Wordmark className="animate-rise text-7xl sm:text-8xl md:text-9xl" />
-
-        <h1 className="animate-rise mt-8 max-w-3xl text-balance text-3xl font-semibold leading-tight text-foreground sm:text-4xl md:text-5xl">
-          {landing.hero.titleLead}{" "}
-          <span className="text-brand">{landing.hero.titleHighlight}</span>.
+        <h1 className="animate-rise text-6xl font-bold tracking-tight text-foreground sm:text-6xl md:text-6xl lg:text-8xl">
+          Caio Lucas
         </h1>
+
+        <p className="animate-rise mt-4 text-xl font-medium tracking-wide text-brand sm:text-2xl md:text-3xl">
+          Software Developer
+        </p>
 
         <p className="animate-rise mt-6 max-w-xl text-pretty text-base leading-7 text-muted-foreground md:text-lg">
           {landing.hero.description}
         </p>
 
         <div className="animate-rise mt-10 flex flex-col items-center gap-4 sm:flex-row">
-          <a
-            href="#para-quem"
-            className="flex h-12 items-center justify-center rounded-full bg-brand px-8 text-sm font-semibold text-brand-foreground transition-transform hover:scale-[1.03]"
+          <LiquidGlassButton
+            href="#problema"
+            className="flex h-12 items-center justify-center rounded-full bg-brand px-8 text-sm font-semibold text-brand-foreground"
           >
             {landing.hero.primaryCta}
-          </a>
-          <Link
-            href="/about"
-            className="flex h-12 items-center justify-center rounded-full border border-border px-8 text-sm font-medium text-foreground transition-colors hover:border-brand"
+          </LiquidGlassButton>
+          <LiquidGlassButton
+            href="#para-quem"
+            className="flex h-12 items-center justify-center rounded-full border border-border px-8 text-sm font-medium text-foreground"
           >
             {landing.hero.secondaryCta}
-          </Link>
+          </LiquidGlassButton>
         </div>
 
-        <p className="animate-rise mt-6 text-xs text-muted-foreground">
-          {landing.hero.note}
-        </p>
+        <div className="animate-rise mt-10 flex flex-wrap items-center justify-center gap-2.5 max-w-xl">
+          {landing.hero.technologies.map((tech) => (
+            <LiquidGlassButton
+              key={tech}
+              as="div"
+              className="flex items-center justify-center rounded-xl border border-border/80 bg-muted/30 px-4 py-2 text-xs font-medium text-foreground/90"
+            >
+              <span>{tech}</span>
+            </LiquidGlassButton>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -328,7 +323,7 @@ function FinalCta() {
   return (
     <section className="mx-auto w-full max-w-6xl px-6 py-24">
       <div className="relative overflow-hidden rounded-3xl border border-brand/30 bg-brand/5 px-8 py-16 text-center">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(600px_300px_at_50%_-20%,rgba(134,207,230,0.25),transparent)]" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(600px_300px_at_50%_-20%,rgba(6,182,212,0.25),transparent)]" />
         <div className="relative">
           <Wordmark className="text-4xl" withTrail={false} />
           <h2 className="mt-6 text-balance text-2xl font-semibold text-foreground sm:text-3xl">
@@ -337,12 +332,12 @@ function FinalCta() {
           <p className="mx-auto mt-4 max-w-lg text-base leading-7 text-muted-foreground">
             {landing.finalCta.description}
           </p>
-          <Link
+          <LiquidGlassButton
             href="/about"
-            className="mt-8 inline-flex h-12 items-center justify-center rounded-full bg-brand px-8 text-sm font-semibold text-brand-foreground transition-transform hover:scale-[1.03]"
+            className="mt-8 inline-flex h-12 items-center justify-center rounded-full bg-brand px-8 text-sm font-semibold text-brand-foreground"
           >
             {landing.finalCta.cta}
-          </Link>
+          </LiquidGlassButton>
         </div>
       </div>
     </section>

@@ -8,22 +8,29 @@ const ptBR = {
   landing: {
     header: {
       nav: [
-        { href: "#problema", label: "O problema" },
-        { href: "#para-quem", label: "Para quem" },
-        { href: "#diferenciais", label: "Diferenciais" },
-        { href: "#como-funciona", label: "Como funciona" },
+        { href: "#problema", label: "Contato" },
+        { href: "#para-quem", label: "Trajetória" },
+        { href: "#diferenciais", label: "Projetos" },
+        { href: "#como-funciona", label: "Sobre mim" },
       ],
       aboutCta: "Sobre",
     },
     hero: {
-      badge: "Plataforma de transporte escolar inteligente",
       titleLead: "O sistema operacional do",
       titleHighlight: "transporte escolar",
       description:
-        "O Vanep conecta responsáveis a transportadores escolares verificados — com contratos digitais, rastreamento em tempo real e notificações a cada etapa do trajeto. Tranquilidade para a família, gestão completa para o motorista.",
-      primaryCta: "Conhecer a plataforma",
-      secondaryCta: "Sobre o projeto",
-      note: "Em breve para iOS e Android · Painel web para a equipe Vanep",
+        "Estudante de Ciencia da Computação na Universidade de Brasília, sempre em busca de aprender cada vez mais sobre tudo que envolve desenvolver um software. Atualmente sou desenvolver da Vanep, um projeto que surgiu entre amigos que visa melhorar a logisitica de vans escolares.",
+      primaryCta: "Entre em contato",
+      secondaryCta: "Conheça minha trajetória",
+      technologies: [
+        "Next.js",
+        "TypeScript",
+        "Java (Spring Boot)",
+        "PHP (Laravel)",
+        "SQL",
+        "Docker",
+        "Git",
+      ],
     },
     stats: [
       { value: "4 fases", label: "de acompanhamento por aluno, em tempo real" },
